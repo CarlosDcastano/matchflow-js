@@ -1,15 +1,28 @@
 {
-    "companies" : [
-        
-    ],
+  "companies": [
+    {
+      "id": "f799",
+      "name": "edwefwef",
+      "corpId": "fsadfsadfsdf",
+      "email": "aasdfasd@gmail.com",
+      "password": "asdf"
+    }
+  ],
+  "canditdates": [
+    {
+      "id": "0db0",
+      "name": "Carlos Dueiner",
+      "lastName": "Castaño Rodriguez",
+      "personalID": "1038337751",
+      "email": "carlos@gmail.com",
+      "password": "carlos123"
+    }
+  ],
+  "offers" : [
 
-    "canditdates" : [
+  ],
 
-    ],
-    "offers" : [
-
-    ],
-    "matches" : [
-
-    ]
+  "matches": [
+    
+  ]
 }
