@@ -1,6 +1,8 @@
 import { state } from "../data/state.js";
 import { app, signUpFormCandidate } from "./elements.js";
-import { renderLogin, renderSignUpCompany, renderSignUpCandidate, renderChoseTypeCustomer } from "./render.js";
+import { renderSignUpCompany, renderSignUpCandidate, renderChoseTypeCustomer } from "./renders/renderSignUp.js";
+import { renderLogin } from "./renders/renderLogin.js";
+
 import { validateCandidateSignUp, validateCandidateLogin } from "../validators/validatorCandidates.js";
 import { validateCompanySignUp, validateCompanyLogin } from "../validators/validatorCompanies.js";
 import { createCandidate, updateCandidate } from "../services/servicesCandidates.js";
@@ -74,11 +76,13 @@ export function listeners(){
             
             if(validateCompanyLogin(emailLogin, passwordLogin)){
                 console.log("Company logged")//renderCompanyDashboard();
+            }else if(validateCandidateLogin(emailLogin, passwordLogin)){
+                console.log("Candidate logged")//renderCandidateDashboard();
+            }else{
+                alert("Usuario o contraseña incorrecto")
             }
 
-            if(validateCandidateLogin(emailLogin, passwordLogin)){
-                console.log("Candidate logged")//renderCandidateDashboard();
-            }
+            
         }
 
     });

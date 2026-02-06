@@ -1,4 +1,4 @@
-import { renderLogin } from "./dom/render.js";
+import { renderLogin } from "./dom/renders/renderLogin.js";
 import { state } from "./data/state.js";
 import { listeners } from "./dom/listeners.js";
 import { getCompanies } from "./services/servicesCompanies.js";

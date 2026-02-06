@@ -28,6 +28,7 @@ export function validateCompanyLogin(email, password){
     
     if(!company){
         return false
+    }else{
+        return true
     }
-    return true
 }

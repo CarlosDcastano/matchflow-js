@@ -28,6 +28,8 @@ export function validateCandidateLogin(email, password){
     
     if(!candidate){
         return false
+    }else{
+        return true
     }
-    return true
+    
 }
