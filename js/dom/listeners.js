@@ -2,7 +2,7 @@ import { state } from "../data/state.js";
 import { app, signUpFormCandidate } from "./elements.js";
 import { renderSignUpCompany, renderSignUpCandidate, renderChoseTypeCustomer } from "./renders/renderSignUp.js";
 import { renderLogin } from "./renders/renderLogin.js";
-
+import { renderCompanyDashboard, showProfile } from "./renders/renderCompDash.js"
 import { validateCandidateSignUp, validateCandidateLogin } from "../validators/validatorCandidates.js";
 import { validateCompanySignUp, validateCompanyLogin } from "../validators/validatorCompanies.js";
 import { createCandidate, updateCandidate } from "../services/servicesCandidates.js";
@@ -74,9 +74,14 @@ export function listeners(){
             const emailLogin = document.querySelector("#emailLogin").value;
             const passwordLogin = document.querySelector("#passwordLogin").value;
             
-            if(validateCompanyLogin(emailLogin, passwordLogin)){
-                console.log("Company logged")//renderCompanyDashboard();
-            }else if(validateCandidateLogin(emailLogin, passwordLogin)){
+            const userCompany = validateCompanyLogin(emailLogin, passwordLogin);
+            const userCandidate = validateCandidateLogin(emailLogin, passwordLogin)
+            
+            if(userCompany){
+                state.currentUser = userCompany;
+                renderCompanyDashboard(state.currentUser);
+            }else if(userCandidate){
+                state.currentUser = userCandidate;
                 console.log("Candidate logged")//renderCandidateDashboard();
             }else{
                 alert("Usuario o contraseña incorrecto")
@@ -87,7 +92,19 @@ export function listeners(){
 
     });
 
-
+    //Aside Dashboard Company
+    document.addEventListener("click", e => {
+        if (e.target.id === "showDashboard") {
+            console.log("Click")
+        }
+        if (e.target.id === "showProfile") {
+            const main = document.getElementById("main");
+            showProfile(main)
+        }
+        if (e.target.id === "showModalCreateOffer") {
+            console.log("Click")
+        }
+    })
 
 
 }
