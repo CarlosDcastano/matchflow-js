@@ -7,8 +7,11 @@ import { validateCandidateSignUp, validateCandidateLogin } from "../validators/v
 import { validateCompanySignUp, validateCompanyLogin } from "../validators/validatorCompanies.js";
 import { createCandidate, updateCandidate } from "../services/servicesCandidates.js";
 import { createCompany, updateCompany } from "../services/servicesCompanies.js";
+import { createOffer, } from "../services/servicesOffers.js";
 import { Candidate } from "../models/candidate.js";
 import { Company } from "../models/company.js";
+import { Offer } from "../models/offer.js";
+
 
 
 export function listeners(){
@@ -102,16 +105,31 @@ export function listeners(){
         const main = document.getElementById("main");
 
         if (e.target.id === "showDashboard") {
-            console.log("Click")
+            renderCompanyDashboard()
         }
         if (e.target.id === "showProfile") {
             renderCompProfile(main)
         }
         if (e.target.id === "showModalCreateOffer") {
+
             renderCreateOffer(main)
         }
-
     });
 
+    // Create offer
+    document.addEventListener("submit", e => {
+        e.preventDefault();
+        if (e.target.id === "createOfferForm") {
+            
+            const title = e.target.getElementById("offerTitle").value;
+            const modality = e.target.getElementById("offerModality").value;
+            const description = e.target.getElementById("offerDescription").value;
+            const requirements = e.target.getElementById("offerRequirements").value;
+            const salary = e.target.getElementById("offerSalary").value;
 
+            const offer = new Offer(title, modality, description, requirements, salary);
+
+            createOffer(offer)
+        }
+    })
 }

@@ -63,7 +63,9 @@ export function renderCompanyDashboard(){
 </div>
 
     `
-    app.appendChild(dashCompany)
+    app.appendChild(dashCompany);
+
+    //Render each offer
 }
 
 export function renderCompProfile(container) {
@@ -160,23 +162,6 @@ export function renderCreateOffer(container) {
                 />
             </div>
 
-            <!-- Company -->
-            <div>
-                <label
-                    for="offerCompany"
-                    class="block text-sm font-medium text-slate-700 mb-1"
-                >
-                    Company
-                </label>
-                <input
-                    type="text"
-                    id="offerCompany"
-                    name="company"
-                    required
-                    class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
-                />
-            </div>
-
             <!-- Modality -->
             <div>
                 <label
@@ -246,6 +231,7 @@ export function renderCreateOffer(container) {
                     name="salary"
                     placeholder="e.g. $2,000 - $3,000 USD"
                     class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
+                    required
                 />
             </div>
 
