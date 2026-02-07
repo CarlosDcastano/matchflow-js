@@ -2,7 +2,7 @@ import { state } from "../data/state.js";
 import { app, signUpFormCandidate } from "./elements.js";
 import { renderSignUpCompany, renderSignUpCandidate, renderChoseTypeCustomer } from "./renders/renderSignUp.js";
 import { renderLogin } from "./renders/renderLogin.js";
-import { renderCompanyDashboard, showProfile } from "./renders/renderCompDash.js"
+import { renderCompanyDashboard, renderCompProfile, renderCreateOffer } from "./renders/renderCompDash.js"
 import { validateCandidateSignUp, validateCandidateLogin } from "../validators/validatorCandidates.js";
 import { validateCompanySignUp, validateCompanyLogin } from "../validators/validatorCompanies.js";
 import { createCandidate, updateCandidate } from "../services/servicesCandidates.js";
@@ -13,7 +13,7 @@ import { Company } from "../models/company.js";
 
 export function listeners(){
 
-    //login
+    // Click buttons
     document.addEventListener("click", e => {
         if(e.target.id === "btnSignUp"){
             renderChoseTypeCustomer();
@@ -26,6 +26,10 @@ export function listeners(){
         }
         if(e.target.id === "goToLoginCandidate"){
             renderSignUpCandidate();
+        }
+        if (e.target.id === "btnLogout") {
+            state.currentUser = null
+            renderLogin()
         }
     });
 
@@ -94,17 +98,20 @@ export function listeners(){
 
     //Aside Dashboard Company
     document.addEventListener("click", e => {
+
+        const main = document.getElementById("main");
+
         if (e.target.id === "showDashboard") {
             console.log("Click")
         }
         if (e.target.id === "showProfile") {
-            const main = document.getElementById("main");
-            showProfile(main)
+            renderCompProfile(main)
         }
         if (e.target.id === "showModalCreateOffer") {
-            console.log("Click")
+            renderCreateOffer(main)
         }
-    })
+
+    });
 
 
 }

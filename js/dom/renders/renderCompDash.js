@@ -66,12 +66,10 @@ export function renderCompanyDashboard(){
     app.appendChild(dashCompany)
 }
 
-export function showProfile(container) {
+export function renderCompProfile(container) {
     container.innerHTML = "";
     const profileSection = document.createElement("section")
     profileSection.id = "profileSection"
-
-    const dataProfile = 
 
     profileSection.innerHTML = `
         <div 
@@ -132,4 +130,138 @@ export function showProfile(container) {
     `
 
     container.appendChild(profileSection);
+}
+
+export function renderCreateOffer(container) {
+    container.innerHTML = "";
+    const createOfferSection = document.createElement("section")
+    createOfferSection.id = "createOfferSection"
+
+    createOfferSection.innerHTML =`
+        <form
+            id="createOfferForm"
+            class="max-w-3xl mx-auto bg-white rounded-2xl shadow-md border border-slate-200 p-8 space-y-6"
+            >
+
+            <!-- Title -->
+            <div>
+                <label
+                    for="offerTitle"
+                    class="block text-sm font-medium text-slate-700 mb-1"
+                >
+                    Title
+                </label>
+                <input
+                    type="text"
+                    id="offerTitle"
+                    name="title"
+                    required
+                    class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
+                />
+            </div>
+
+            <!-- Company -->
+            <div>
+                <label
+                    for="offerCompany"
+                    class="block text-sm font-medium text-slate-700 mb-1"
+                >
+                    Company
+                </label>
+                <input
+                    type="text"
+                    id="offerCompany"
+                    name="company"
+                    required
+                    class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
+                />
+            </div>
+
+            <!-- Modality -->
+            <div>
+                <label
+                    for="offerModality"
+                    class="block text-sm font-medium text-slate-700 mb-1"
+                >
+                    Modality
+                </label>
+                <select
+                    id="offerModality"
+                    name="modality"
+                    required
+                    class="w-full rounded-lg border border-slate-300 px-4 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-slate-800"
+                >
+                    <option value="">Select a modality</option>
+                    <option value="remote">Remote</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="onsite">On-site</option>
+                </select>
+            </div>
+
+            <!-- Description -->
+            <div>
+                <label
+                    for="offerDescription"
+                    class="block text-sm font-medium text-slate-700 mb-1"
+                >
+                    Description
+                </label>
+                <textarea
+                    id="offerDescription"
+                    name="description"
+                    rows="5"
+                    required
+                    class="w-full rounded-lg border border-slate-300 px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-slate-800"
+                ></textarea>
+            </div>
+
+            <!-- Requirements -->
+            <div>
+                <label
+                    for="offerRequirements"
+                    class="block text-sm font-medium text-slate-700 mb-1"
+                >
+                    Requirements
+                </label>
+                <textarea
+                    id="offerRequirements"
+                    name="requirements"
+                    rows="5"
+                    required
+                    class="w-full rounded-lg border border-slate-300 px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-slate-800"
+                ></textarea>
+            </div>
+
+            <!-- Salary -->
+            <div>
+                <label
+                    for="offerSalary"
+                    class="block text-sm font-medium text-slate-700 mb-1"
+                >
+                    Salary
+                </label>
+                <input
+                    type="text"
+                    id="offerSalary"
+                    name="salary"
+                    placeholder="e.g. $2,000 - $3,000 USD"
+                    class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
+                />
+            </div>
+
+            <!-- Submit -->
+            <div class="flex justify-end pt-4">
+                <button
+                    type="submit"
+                    class="cursor-pointer bg-slate-800 text-white px-6 py-2 rounded-lg font-medium hover:bg-slate-700 transition-colors"
+                >
+                    Create
+                </button>
+            </div>
+
+        </form>
+
+    
+    `
+    container.appendChild(createOfferSection);
 }
