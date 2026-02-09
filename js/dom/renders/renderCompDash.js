@@ -54,7 +54,6 @@ export function renderCompanyDashboard(){
             </h2>
 
             <div id="offers" class="space-y-4">
-                <!-- Offers go here -->
             </div>
         </main>
 
@@ -65,7 +64,31 @@ export function renderCompanyDashboard(){
     `
     app.appendChild(dashCompany);
 
-    //Render each offer
+        const currentCompOffers = state.offers.filter(offer => offer.idCompany === state.currentUser.id);
+        console.log(state.offers);
+        console.log(state.currentUser.id)
+        const offers = document.getElementById("offers");
+        
+
+        currentCompOffers.forEach(offer =>{
+            const artEachOffer = document.createElement("article");
+            artEachOffer.classList.add("artEachOffer");
+            artEachOffer.innerHTML=`
+                <h2 class="offerName">${offer.title}</h2>
+
+                <div class="offer-details">
+                    <p class="offerCompany"><strong>Company Name:</strong> ${offer.company}</p>
+                    <p class="offerModality"><strong>Modality:</strong> ${offer.modality}</p>
+                    <div class="description"><strong>Description:</strong> ${offer.description}</div>
+                    <p class="offerRequirements"><strong>Requirements:</strong> ${offer.requirements}</p>
+                    <p class="offerSalary"><strong>Salary:</strong> ${offer.salary}</p>
+                </div>
+            `
+        
+            offers.appendChild(artEachOffer);
+        })
+
+
 }
 
 export function renderCompProfile(container) {

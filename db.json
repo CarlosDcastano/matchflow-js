@@ -6,6 +6,13 @@
       "corpId": "fsadfsadfsdf",
       "email": "aasdfasd@gmail.com",
       "password": "asdf"
+    },
+    {
+      "id": "fad8",
+      "name": "JC y asociados",
+      "corpId": "1035337621",
+      "email": "mijennimia@gmail.com",
+      "password": "mijennimia"
     }
   ],
   "canditdates": [
@@ -18,11 +25,47 @@
       "password": "carlos123"
     }
   ],
-  "offers" : [
-
+  "offers": [
+    {
+      "id": "7103",
+      "idCompany": "fad8",
+      "title": "fasdfasdf",
+      "company": "JC y asociados",
+      "modality": "remote",
+      "description": "sdfasdgs sdfgdsfg sdfg s  sdfgsdgfsdfgsdfg sdfgsdfg",
+      "requirements": "dfasfs  sa dfasdf",
+      "salary": "2560000"
+    },
+    {
+      "id": "359c",
+      "idCompany": "fad8",
+      "title": "fasdfasdfasf",
+      "company": "JC y asociados",
+      "modality": "hybrid",
+      "description": "rwergwergwerg regwergsdfdsf",
+      "requirements": "asfasfasd dfasdf",
+      "salary": "5000000"
+    },
+    {
+      "id": "dfb4",
+      "idCompany": "fad8",
+      "title": "fasdasdasdf asfasdf",
+      "company": "JC y asociados",
+      "modality": "remote",
+      "description": "fasdfa rgregergdf",
+      "requirements": "asdfasdf ggsdfgd",
+      "salary": "8600000"
+    },
+    {
+      "id": "4e09",
+      "idCompany": "fad8",
+      "title": "acdasdcadc",
+      "company": "JC y asociados",
+      "modality": "onsite",
+      "description": "dcafeg gtrtbtrb btbt",
+      "requirements": "fafrf rgtgrtg",
+      "salary": "4500000"
+    }
   ],
-
-  "matches": [
-    
-  ]
+  "matches": []
 }

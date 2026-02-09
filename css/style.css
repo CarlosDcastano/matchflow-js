@@ -8,3 +8,46 @@
     width: 100%;
     height: auto;
 }
+
+.artEachOffer{
+    border-radius: 15px;
+    max-width: 500px;
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 0 7px;
+    cursor: pointer;
+}
+
+.artEachOffer:hover{
+    transform: scale(1.01);
+    transition: 0.3s;
+}
+
+#offers{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
+    align-items: none;
+}
+
+.offerName{
+    border-radius:  15px;
+    background-color: #1d293d;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Esto quita el margen extra que empuja el fondo de la tarjeta */
+.offer-details p {
+    margin: 5px 0; /* Un margen pequeño y uniforme para todos */
+}
+
+#offers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start; /* Crucial: evita que las tarjetas cortas se estiren */
+}

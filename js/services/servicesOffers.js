@@ -11,7 +11,7 @@ export async function getOffers() {
             }
         
         const data = await response.json()
-        state.offers = data
+        state.offers = data;
     } catch (error) {
         console.log(error)
     }

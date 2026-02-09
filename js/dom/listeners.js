@@ -121,11 +121,11 @@ export function listeners(){
         e.preventDefault();
         if (e.target.id === "createOfferForm") {
             
-            const title = e.target.getElementById("offerTitle").value;
-            const modality = e.target.getElementById("offerModality").value;
-            const description = e.target.getElementById("offerDescription").value;
-            const requirements = e.target.getElementById("offerRequirements").value;
-            const salary = e.target.getElementById("offerSalary").value;
+            const title = document.getElementById("offerTitle").value.trim();
+            const modality = document.getElementById("offerModality").value.trim();
+            const description = document.getElementById("offerDescription").value.trim();
+            const requirements = document.getElementById("offerRequirements").value.trim();
+            const salary = document.getElementById("offerSalary").value.trim();
 
             const offer = new Offer(title, modality, description, requirements, salary);
 
